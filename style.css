@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+.main-header {
+    position: fixed;
+    margin: 1%;
+    font-size: 100px;
+    color: red;
+    width: 80%;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.skill-header {
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    margin-top: 8%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.skill-header > div {
+    background-color: #f1f1f1;
+    margin: 0.5%;
+    padding: 20px;
+    font-size: 30px;
+    width: 25%;
+    text-align: center;
+}
+
+.more-info-tab {
+    position: fixed;
+    width: 100%;
+    height: 50%;
+    margin-top: 23%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.more-info-tab > div {
+    background-color: #f1f1f186;
+    margin: 2%;
+    height: 90%;
+    font-size: 30px;
+    width: 18%;
+    text-align: left;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 4%;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.more-info-tab > div > a {
+    padding: 0.001em;
+    font-size: .8em;
+}
