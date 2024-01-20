@@ -10,6 +10,8 @@ import atmosphereFragmentShader from './shaders/atmosphereFragment.glsl'
 //CONSTANTS
 const colors = ['white', 'yellow', 'red'];
 const particles = new THREE.Group();
+const width = window.innerWidth;
+const height = window.innerHeight;
 
 //CREATE A SCENE OR WORLD USING THE THREE.Scene
 const scene = new THREE.Scene();
@@ -32,7 +34,7 @@ document.body.appendChild(renderer.domElement);
 const geometry = new THREE.SphereGeometry(92.5, 50, 50);
 
 /**const material = new THREE.MeshPhongMaterial( { 
-	map: new THREE.TextureLoader().load('./public/images/globe.jpg'), 
+	map: new THREE.TextureLoader().load('./images/globe.jpg'), 
 	shading: THREE.FlatShading } );*/
 
 const material = new THREE.ShaderMaterial({
@@ -40,7 +42,7 @@ const material = new THREE.ShaderMaterial({
 	fragmentShader,
 	uniforms: {
 		globeTexture: {
-			value: new THREE.TextureLoader().load('./public/images/globe.jpg')
+			value: new THREE.TextureLoader().load('./images/globe.jpg')
 		}
 	}
 })
@@ -87,6 +89,8 @@ document.getElementById("technical-scripts").addEventListener("mouseover", () =>
 document.getElementById("web-apps").addEventListener("mouseover", () => {
 	renderer.setClearColor('skyblue');
 })
+
+window.addEventListener('resize', onResize);
 
 //WE CAN ALSO MANIPULATE OBJECTS USING MOUSE MOVEMENT
 const mouse = { x: undefined, y: undefined };
@@ -187,6 +191,12 @@ function blueAtmosphere() {
 	atmosphere.position.set(0, 40, 0);
 
 	scene.add(atmosphere);
+}
+
+function onResize() {
+	camera.aspect = width / height;
+	camera.updateProjectionMatrix();
+	renderer.setSize(width, height);
 }
 
 //CHECK IF THE BROWSER IS COMPATIBLE BEFORE CALLING ANIMATE FUNCTION
