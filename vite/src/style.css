@@ -1,89 +1,218 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@media only screen and (max-width: 720px) {
+    body {
+        margin: 0;
+        font-family: 'Montserrat';
+        word-spacing: 0.3em;
+        letter-spacing: 0.15em;
+    }
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+    .container {
+        width: 92%;
+        display: block;
+        justify-content: center;
+        background: transparent;
+        overflow-y: hidden;
+        padding: 4%;
+    }
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
+    .main-header {
+        margin: 2%;
+        font-size: 3em;
+        color: red;
+        width: 100%;
+        height: 10%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+    .skill-header {
+        display: none;
+    }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+    .footer {
+        display: none;
+    }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+    .intro {
+        color: white;
+        background-color: rgba(5, 0, 20, 0.486);
+        padding: 3% 3% 2% 5%;
+    } 
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+    canvas {
+        position: fixed;
+        z-index: -10000;
+        top: 0.0001%;
+        left: 0.00001%;
+        height:100px;
+    }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+    .more-info-tab {
+        display: block;
+    }
+
+    .more-info-tab>div {
+        padding-bottom: 10px;
+        padding-left: 5%;
+        background-color: rgba(5, 0, 20, 0.486);
+    }
 }
 
-.card {
-  padding: 2em;
+@media only screen and (min-width: 720px) {
+    body {
+        margin: 0;
+        font-family: 'Montserrat';
+        word-spacing: 0.1em;
+        letter-spacing: 0.15em;
+    }
+
+    .intro {
+        display: none;
+    }
+
+    .main-header {
+        position: fixed;
+        margin: 2%;
+        font-size: 4em;
+        color: red;
+        width: 100%;
+        height: 10%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .skill-header {
+        position: fixed;
+        width: 100%;
+        height: 5%;
+        margin-top: 12%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .skill-header>div {
+        background-color: #f1f1f1;
+        margin: 0.5%;
+        padding: 10px;
+        font-size: 1em;
+        width: 25%;
+        text-align: center;
+    }
+
+    .more-info-tab {
+        position: fixed;
+        width: 100%;
+        height: 50%;
+        margin-top: 30%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .more-info-tab>div {
+        background-color: #f1f1f186;
+        margin: 2%;
+        height: 70%;
+        font-size: 0.8em;
+        width: 20%;
+        text-align: left;
+        padding-left: 2%;
+        padding-right: 2%;
+        border-radius: 4%;
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background: transparent;
+    }
+
+    .more-info-tab>div>a {
+        padding: 0.001em;
+        font-size: .8em;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 5px;
+        background-color: #f1f1f186;
+        border-radius: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 0.6em;
+    }
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+@media only screen and (min-width: 1040px) {
+    body {
+        margin: 0;
+        font-family: 'Montserrat';
+    }
+
+    .main-header {
+        position: fixed;
+        margin: 1%;
+        font-size: 5em;
+        color: red;
+        width: 80%;
+        height: 15%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .skill-header {
+        position: fixed;
+        width: 100%;
+        height: 5%;
+        margin-top: 12%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .skill-header>div {
+        background-color: #f1f1f1;
+        margin: 0.5%;
+        padding: 20px;
+        font-size: 1.7em;
+        width: 25%;
+        text-align: center;
+    }
+
+    .more-info-tab {
+        position: fixed;
+        width: 100%;
+        height: 50%;
+        margin-top: 23%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .more-info-tab>div {
+        background-color: #f1f1f186;
+        margin: 2%;
+        height: 75%;
+        font-size: 1.1em;
+        width: 18%;
+        text-align: left;
+        padding-left: 2%;
+        padding-right: 2%;
+        border-radius: 4%;
+    }
+    
+    .footer {
+        position: fixed;
+        bottom: -10px;
+        background-color: #f1f1f186;
+        border-radius: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
