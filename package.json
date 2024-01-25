@@ -9,10 +9,12 @@
   "author": "dev-mitch",
   "license": "ISC",
   "dependencies": {
+    "glslify-loader": "^2.0.0",
     "gsap": "^3.12.4",
     "three": "^0.160.0"
   },
   "devDependencies": {
+    "raw-loader": "^4.0.2",
     "vite": "^5.0.10",
     "vite-plugin-string": "^1.2.2"
   }
