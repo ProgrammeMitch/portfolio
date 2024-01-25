@@ -1,6 +1,6 @@
 //ADD IMPORTS
 import * as THREE from 'three';
-import gsap from 'gsap';
+//import gsap from 'gsap';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import vertexShader from './shaders/vertex.glsl';
 import fragmentShader from './shaders/fragment.glsl'

@@ -9,6 +9,16 @@
     </head>
 	<body>
         <div class="container">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+            <script async src="https://ga.jspm.io/npm:es-module-shims@1.5.1/dist/es-module-shims.js" crossorigin="anonymous"></script>
+            <script type="importmap">
+              {
+                "imports": {
+                  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+                }
+              }
+            </script>
             <script type="module" src="/main.js"></script>
             <div class="main-header">Mitch'el C.</div>
             <div class="skill-header">
@@ -26,9 +36,7 @@
             <div class="more-info-tab">
                 <div id="web-apps">
                     <h3 style="color: blue">Cool Web Apps 😎</h3>
-                    <a href=""><li>link</li></a>
-                    <a href=""><li>link</li></a>
-                    <a href=""><li>link</li></a>
+                    <a href="https://programmemitch.github.io/chess-in-slums/index.html"><li>link</li></a>
                 </div>
                 <div id="technical-scripts">
                     <h3 style="color: cyan">White Papers 😉</h3>
