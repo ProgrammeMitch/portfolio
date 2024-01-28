@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "glsl-shader-loader": "^0.1.6",
     "vite": "^4.1.0"
   }
 }

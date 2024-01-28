@@ -2,10 +2,10 @@
 import * as THREE from 'three';
 //import gsap from 'gsap';
 import WebGL from 'three/addons/capabilities/WebGL.js';
-import vertexShader from './shaders/vertex.glsl';
+/**import vertexShader from './shaders/vertex.glsl';
 import fragmentShader from './shaders/fragment.glsl'
 import atmosphereVertexShader from './shaders/atmosphereVertex.glsl'
-import atmosphereFragmentShader from './shaders/atmosphereFragment.glsl'
+import atmosphereFragmentShader from './shaders/atmosphereFragment.glsl'*/
 
 //CONSTANTS
 const colors = ['white', 'yellow', 'red'];
@@ -38,8 +38,8 @@ const geometry = new THREE.SphereGeometry(92.5, 50, 50);
 	shading: THREE.FlatShading } );*/
 
 const material = new THREE.ShaderMaterial({
-	vertexShader,
-	fragmentShader,
+	vertexShader: document.getElementById( 'vertexShader' ).textContent,
+	fragmentShader: document.getElementById( 'fragmentShader' ).textContent,
 	uniforms: {
 		globeTexture: {
 			value: new THREE.TextureLoader().load('./images/globe.jpg')
@@ -93,6 +93,12 @@ document.getElementById("web-apps").addEventListener("mouseover", () => {
 window.addEventListener('resize', onResize);
 
 //WE CAN ALSO MANIPULATE OBJECTS USING MOUSE MOVEMENT
+const uniforms = {
+	u_time: { type: "f", value: 1.0 },
+	u_resolution: { type: "v2", value: new THREE.Vector2() },
+	u_mouse: { type: "v2", value: new THREE.Vector2() }
+};
+
 const mouse = { x: undefined, y: undefined };
 
 addEventListener('mousemove', () => {
@@ -179,8 +185,8 @@ function blueAtmosphere() {
 	//ATMOSPHERE AROUND THE GLOBE
 	const atmosphereGeometry = new THREE.SphereGeometry(92.5, 50, 50);
 	const atmosphereMaterial = new THREE.ShaderMaterial({
-		vertexShader: atmosphereVertexShader,
-		fragmentShader: atmosphereFragmentShader,
+		vertexShader: document.getElementById( 'atmosphereVertexShader' ).textContent,
+		fragmentShader: document.getElementById( 'atmosphereFragmentShader' ).textContent,
 		blending: THREE.AdditiveBlending,
 		side: THREE.BackSide
 	})
@@ -194,6 +200,8 @@ function blueAtmosphere() {
 }
 
 function onResize() {
+	uniforms.u_resolution.value.x = renderer.domElement.width;
+	uniforms.u_resolution.value.y = renderer.domElement.height;
 	camera.aspect = width / height;
 	camera.updateProjectionMatrix();
 	renderer.setSize(width, height);
