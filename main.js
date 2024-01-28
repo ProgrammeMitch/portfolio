@@ -93,12 +93,6 @@ document.getElementById("web-apps").addEventListener("mouseover", () => {
 window.addEventListener('resize', onResize);
 
 //WE CAN ALSO MANIPULATE OBJECTS USING MOUSE MOVEMENT
-const uniforms = {
-	u_time: { type: "f", value: 1.0 },
-	u_resolution: { type: "v2", value: new THREE.Vector2() },
-	u_mouse: { type: "v2", value: new THREE.Vector2() }
-};
-
 const mouse = { x: undefined, y: undefined };
 
 addEventListener('mousemove', () => {
@@ -120,10 +114,10 @@ blueAtmosphere()
 function animate() {
 	requestAnimationFrame(animate);
 
-	particles.rotation.x += 0.001;
-	particles.rotation.y -= 0.004;
+	particles.rotation.x += 0.0001;
+	particles.rotation.y -= 0.0004;
 
-	globe.rotation.y += 0.005;
+	globe.rotation.y += 0.003;
 
 	//WE CAN DELAY ANIMATION USING GSAP
 	gsap.to(group.rotation, {
@@ -134,7 +128,7 @@ function animate() {
 
 	//Add motion to the camera
 	if (camera.position.z < 600) {
-		camera.position.z += 1;
+		camera.position.z += 0.01;
 	}
 
 	renderer.render(scene, camera);
@@ -200,8 +194,6 @@ function blueAtmosphere() {
 }
 
 function onResize() {
-	uniforms.u_resolution.value.x = renderer.domElement.width;
-	uniforms.u_resolution.value.y = renderer.domElement.height;
 	camera.aspect = width / height;
 	camera.updateProjectionMatrix();
 	renderer.setSize(width, height);
